@@ -1,0 +1,37 @@
+a) projeção pnome, minicial, unome (funcionário)
+
+b) projeção pnome, minicial, unome (seleção sexo='f' (funcionário))
+
+c)
+
+select now()-dataNasc as "idade"
+from funcionário
+where pnome like 'A%' AND pnome like '%N';
+
+    TT now()-dataNasc as "idade"(~pnome like 'A%' AND pnome like '%N'(funcionário))
+
+func <- (funcionário)
+res <- ~pnome like 'A%' AND pnome like '%N'(func)
+proj <- TT now()-dataNasc as "idade" (res)
+
+d)
+
+3 -select max(salario)
+1- from funcionário join departamento on(dnr = dnumero)
+2- where dnome = 'Pesquisa';
+
+TT max(salario)(~dnome='Pesquisa'(funcionário |x|~dnr=dnumero departamento))
+
+junc <- (funcionário |x|~dnr=dnumero departamento)
+res <- ~dnome='Pesquisa'(junc)
+proj <- TT max(salario) res
+
+e) projeção nome_dependente (seleção pnome like 'a%' (funcionário junção cpf=fcpf dependente))
+
+f) projeção fcpf (seleção nome_dependente='joana' (dependente))
+
+g) seleção cpf_supervisor is null (funcionário)
+
+h) projeção pnome, unome (seleção horas>15 and horas<30 (funcionário junção cpf=fcpf trabalha_em))
+
+i) projeção f1.cpf, f2.cpf (funcionário f1 junção f1.cpf_supervisor=f2.cpf funcionário f2)
