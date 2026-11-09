@@ -1,0 +1,317 @@
+estilo.css   /* ==========================================================
+   Resgate 2 - estilo.css
+   1) Variáveis  2) Base  3) Cabeçalho  4) Seções
+   5) Componentes  6) Rodapé  7) Responsividade
+   ========================================================== */
+
+/* ---------- 1) VARIÁVEIS CSS ---------- */
+:root {
+  /* Cores */
+  --cor-fundo:        #0d0f14;
+  --cor-superficie:   #161a22;
+  --cor-superficie-2: #1d2330;
+  --cor-borda:        #2a3142;
+  --cor-texto:        #e8eaf0;
+  --cor-texto-suave:  #9aa3b5;
+  --cor-destaque:     #ff5a1f;
+  --cor-destaque-2:   #ffb020;
+
+  /* Fontes */
+  --fonte-titulo: Impact, "Arial Narrow Bold", "Segoe UI", sans-serif;
+  --fonte-texto:  "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Espaçamentos */
+  --espaco-1: 0.5rem;
+  --espaco-2: 1rem;
+  --espaco-3: 1.5rem;
+  --espaco-4: 2.5rem;
+  --espaco-5: 4rem;
+
+  /* Outros */
+  --raio: 12px;
+  --largura-max: 1100px;
+}
+
+/* ---------- 2) BASE ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- 3) CABEÇALHO ---------- */
+.topo {
+  background:
+    linear-gradient(to bottom, rgba(13, 15, 20, 0.55), var(--cor-fundo)),
+    radial-gradient(circle at 70% 20%, #7a2a10 0%, var(--cor-fundo) 65%);
+  border-bottom: 3px solid var(--cor-destaque);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-2);
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-2);
+}
+
+.menu__logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--cor-destaque);
+}
+
+.menu__lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-3);
+}
+
+.menu__lista a {
+  color: var(--cor-texto-suave);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.menu__lista a:hover {
+  color: var(--cor-destaque-2);
+}
+
+.hero {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-5) var(--espaco-2);
+}
+
+.hero__etiqueta {
+  color: var(--cor-destaque-2);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.hero__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: var(--espaco-1) 0;
+}
+
+.hero__subtitulo {
+  color: var(--cor-texto-suave);
+  font-size: 1.15rem;
+}
+
+/* ---------- 4) SEÇÕES ---------- */
+.conteudo {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 var(--espaco-2);
+}
+
+.secao {
+  padding: var(--espaco-4) 0;
+  border-bottom: 1px solid var(--cor-borda);
+  scroll-margin-top: 1rem;
+}
+
+.secao__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--espaco-3);
+  padding-left: var(--espaco-2);
+  border-left: 5px solid var(--cor-destaque);
+}
+
+/* Seção da sinopse: Grid com 2 colunas (capa + texto) */
+.secao--sinopse {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--espaco-4);
+  align-items: start;
+}
+
+/* ---------- 5) COMPONENTES ---------- */
+.capa img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: var(--raio);
+  border: 2px solid var(--cor-borda);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.capa figcaption {
+  margin-top: var(--espaco-1);
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  text-align: center;
+}
+
+.sinopse p {
+  margin-bottom: var(--espaco-2);
+  color: var(--cor-texto);
+}
+
+.selos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-1);
+  margin-top: var(--espaco-3);
+}
+
+.selo {
+  padding: 0.25rem 0.9rem;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 999px;
+  color: var(--cor-destaque-2);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Cartões (elenco e curiosidades) */
+.cartao {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-3);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.cartao:hover {
+  transform: translateY(-4px);
+  border-color: var(--cor-destaque);
+}
+
+.cartao h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.cartao p {
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+}
+
+.cartao--destaque {
+  border-top: 4px solid var(--cor-destaque);
+}
+
+/* Elenco: Flexbox */
+.grade-elenco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-3);
+}
+
+.grade-elenco .cartao {
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto var(--espaco-2);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cor-destaque), var(--cor-destaque-2));
+  color: var(--cor-fundo);
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Ficha técnica: Grid */
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--espaco-2);
+}
+
+.ficha__item {
+  background-color: var(--cor-superficie-2);
+  border-radius: var(--raio);
+  padding: var(--espaco-2) var(--espaco-3);
+}
+
+.ficha dt {
+  color: var(--cor-texto-suave);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ficha dd {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Curiosidades: Grid */
+.grade-curiosidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--espaco-3);
+}
+
+/* ---------- 6) RODAPÉ ---------- */
+.rodape {
+  margin-top: var(--espaco-4);
+  padding: var(--espaco-4) var(--espaco-2);
+  background-color: var(--cor-superficie);
+  border-top: 3px solid var(--cor-destaque);
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- 7) RESPONSIVIDADE ---------- */
+@media (max-width: 800px) {
+  .secao--sinopse {
+    grid-template-columns: 1fr;
+  }
+
+  .capa {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .menu {
+    justify-content: center;
+  }
+}
