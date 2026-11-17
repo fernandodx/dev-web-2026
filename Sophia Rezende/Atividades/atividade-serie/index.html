@@ -34,7 +34,7 @@
             --deep-teal: #1F4256;
             --charcoal: #2F3A3E;
 
-            --bg-color: #D8D3C6;      
+            --bg-color: #D8D3C6;
             --card-bg: #ECE8DD;
             --card-inner: #F6F3EA;
             --text-main: #2F3A3E;
@@ -46,13 +46,10 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
+            --bs-secondary-color: var(--text-muted);
         }
 
-        .text-muted {
-            color: var(--text-muted) !important;
-        }
-
-        /* Cabeçalho da página */
+        /* Cabeçalho */
         .titulo-pagina {
             background: linear-gradient(30deg, var(--charcoal), var(--deep-teal));
             color: white;
@@ -61,7 +58,7 @@
             border-bottom: 4px solid var(--lannister-gold);
         }
 
-        /* Seções  */
+        /* Seções */
         .secao {
             background-color: var(--card-bg);
             border-radius: 10px;
@@ -107,7 +104,7 @@
         }
 
         .carousel-item img.logo {
-            object-fit: contain;            
+            object-fit: contain;
         }
 
         .slide-preto {
@@ -140,7 +137,7 @@
             border-color: var(--border-color);
         }
 
-        .card .card-header {
+        .ficha-tecnica .card-header {
             background-color: var(--moon-door-blue);
             color: var(--charcoal);
         }
@@ -151,7 +148,7 @@
             border-color: var(--border-color);
         }
 
-        /* Cards do elenco */
+        /* Elenco */
         .card-personagem {
             transition: transform 0.2s ease-in-out;
         }
@@ -165,14 +162,14 @@
             font-weight: 600;
         }
 
-        .casa-stark      { background-color: var(--castle-black) !important; color: white !important; }
-        .casa-targaryen  { background-color: var(--house-red) !important; color: white !important; }
-        .casa-lannister  { background-color: var(--lannister-gold) !important; color: var(--charcoal) !important; }
+        .card-personagem .casa-stark      { background-color: var(--castle-black); }
+        .card-personagem .casa-targaryen  { background-color: var(--house-red); }
+        .card-personagem .casa-lannister  { background-color: var(--lannister-gold); color: var(--charcoal); }
 
         .foto-personagem {
             height: 260px;
             object-fit: cover;
-            object-position: center 20%;    /* mantém os rostos visíveis */
+            object-position: center 20%;
         }
 
         .card-footer {
@@ -184,7 +181,7 @@
 </head>
 <body>
 
-    <!-- BREADCRUMB: navegação de contexto no topo da página -->
+    <!-- BREADCRUMB -->
     <nav aria-label="breadcrumb" class="container pt-3">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -210,14 +207,13 @@
 
     <main class="container">
 
-        <!-- ===================== DESTAQUES (CAROUSEL) ===================== -->
+        <!-- DESTAQUES -->
         <section class="secao mb-4" id="destaques">
             <h2><i class="bi bi-images me-2"></i>Destaques da Série</h2>
             <p class="text-muted">Passe pelos destaques do mundo de Westeros.</p>
 
             <div id="carouselSerie" class="carousel slide" data-bs-ride="carousel">
 
-                <!-- Indicadores -->
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -225,7 +221,6 @@
                     <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
 
-                <!-- Slides -->
                 <div class="carousel-inner rounded">
 
                     <div class="carousel-item active">
@@ -271,7 +266,6 @@
 
                 </div>
 
-                <!-- Controles -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselSerie" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
@@ -283,14 +277,13 @@
             </div>
         </section>
 
-        <!-- ===================== SINOPSE + FICHA ===================== -->
+        <!-- SINOPSE -->
         <section class="secao mb-4" id="sinopse">
             <h2><i class="bi bi-book me-2"></i>Sobre a Série</h2>
             <div class="faixa-casas mb-4"></div>
 
             <div class="row g-4">
 
-                <!-- Sinopse -->
                 <article class="col-12 col-lg-8">
                     <h3>Sinopse</h3>
                     <p>
@@ -310,9 +303,8 @@
                     </blockquote>
                 </article>
 
-                <!-- Ficha técnica -->
                 <aside class="col-12 col-lg-4">
-                    <div class="card">
+                    <div class="card ficha-tecnica">
                         <div class="card-header fw-bold">
                             <i class="bi bi-info-circle me-2"></i>Ficha técnica
                         </div>
@@ -331,7 +323,7 @@
             </div>
         </section>
 
-        <!-- ===================== ELENCO (CARDS) ===================== -->
+        <!-- ELENCO -->
         <section class="secao mb-4" id="elenco">
             <h2><i class="bi bi-people-fill me-2"></i>Elenco Principal</h2>
             <p class="text-muted">Conheça alguns dos personagens e os atores que os interpretaram.</p>
