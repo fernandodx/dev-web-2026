@@ -17,4 +17,4 @@ A página apresenta a série da HBO (2011 a 2019, 8 temporadas e 73 episódios),
 
 ## Paleta de cores
 
-Baseada na paleta "Game of Tones" (cores como Lannister Gold, Brienne's Bravery, Ygritte's Locks e Castle Black).
+Baseada na paleta de "Game of Thrones" (cores como Lannister Gold, Brienne's Bravery, Ygritte's Locks, Castle Black, ...).
