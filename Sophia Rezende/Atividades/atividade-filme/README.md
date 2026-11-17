@@ -1,10 +1,10 @@
 # 1ª Avaliação: Página de Filme — O Mundo de Harry Potter
 
-Página web sobre a saga **Harry Potter**, de J.K. Rowling, feita com **HTML e CSS puros** (sem Bootstrap) para a 2ª Avaliação Oficial de Desenvolvimento de Interfaces.
+Página web sobre a saga **Harry Potter**, de J.K. Rowling, feita com **HTML e CSS ** (sem Bootstrap) para a 1ª Avaliação Oficial de Desenvolvimento de Interfaces.
 
 ## Descrição
 
-Em vez de um único filme, a página reúne a saga inteira em um só arquivo, com um menu que leva a cada seção da própria página (rolagem suave):
+Em vez de um único filme, a página combina a saga inteira em um só arquivo, com um menu que leva a cada seção da própria página (rolagem suave):
 
 - **Início:** apresentação do site.
 - **Livros:** os 7 livros principais, com capa e sinopse.
