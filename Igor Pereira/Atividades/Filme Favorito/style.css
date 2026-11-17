@@ -1,492 +1,136 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Barlow+Condensed:wght@400;600&family=Bebas+Neue&family=Bungee&family=Cinzel:wght@600&family=Creepster&family=IM+Fell+English+SC&family=Oswald:wght@300;500&family=Permanent+Marker&family=Special+Elite&display=swap");
-
+/* Batman: O Cavaleiro das Trevas — CSS puro */
 :root {
-  --preto: #07080a;
-  --grafite: #14171c;
-  --cinza: #2a2e35;
-  --texto: #d7d9dd;
-  --amarelo: #f5c518;
-  --azul-noite: #0d1b2a;
+  --preto: #090b0d;
+  --escuro: #111518;
+  --cinza: #273034;
+  --cinza-claro: #aab1af;
+  --branco: #eef0eb;
+  --vermelho: #c73535;
+  --amarelo: #d7ab45;
+  --linha: rgba(238, 240, 235, .16);
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: Arial, Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--branco); background: var(--preto); font-family: var(--sans); line-height: 1.6; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
 
-body {
-  margin: 0;
-  background:
-    radial-gradient(ellipse at 50% -10%, #1e2a3a 0%, transparent 55%),
-    var(--preto);
-  color: var(--texto);
-  font-family: "Oswald", "Arial Narrow", sans-serif;
-  font-weight: 300;
-  font-size: 1.05rem;
-  line-height: 1.7;
+.topo { position: absolute; z-index: 10; top: 0; right: 0; left: 0; border-bottom: 1px solid var(--linha); background: rgba(9, 11, 13, .38); }
+.barra { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
+.logo { color: var(--branco); font-weight: 900; letter-spacing: -.07em; text-decoration: none; }
+.logo-bat { display: inline-block; color: var(--amarelo); font-size: 18px; }
+.logo-man { font-size: 18px; }
+.menu { display: flex; gap: 34px; margin: 0; padding: 0; list-style: none; }
+.menu a, .ano { color: var(--cinza-claro); font-size: 11px; font-weight: 700; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; }
+.menu a:hover { color: var(--amarelo); }
+.ano { color: var(--amarelo); }
+
+.hero { position: relative; display: flex; min-height: 780px; align-items: center; overflow: hidden; background: var(--preto); }
+.hero-imagem { position: absolute; inset: 0; background: url('https://files.manuscdn.com/search-media/310519663930802616/kAe8iV0B3P0kUjsEfJicr5/vZih36cHu7PWp84BV8PnMh.jpg') center/cover no-repeat; filter: saturate(.7) contrast(1.12); opacity: .72; }
+.hero-sombra { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9,11,13,.98) 0%, rgba(9,11,13,.76) 38%, rgba(9,11,13,.18) 100%), linear-gradient(0deg, rgba(9,11,13,.95), transparent 45%); }
+.hero-conteudo { position: relative; z-index: 1; padding-top: 100px; }
+.etiqueta, .numero-secao { margin: 0 0 22px; color: var(--amarelo); font-size: 10px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+.hero h1 { max-width: 720px; margin: 0; font: 700 clamp(4.4rem, 11vw, 9.3rem)/.84 var(--serif); letter-spacing: -.08em; }
+.hero h1 span { color: transparent; -webkit-text-stroke: 1px var(--branco); }
+.hero-descricao { max-width: 420px; margin: 38px 0 28px; color: #d0d5d2; font: italic 18px/1.5 var(--serif); }
+.botao { display: inline-flex; gap: 26px; align-items: center; padding: 13px 17px; border: 1px solid var(--branco); color: var(--branco); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-decoration: none; text-transform: uppercase; transition: .25s ease; }
+.botao:hover { border-color: var(--amarelo); color: var(--amarelo); transform: translateX(4px); }
+.botao span { color: var(--amarelo); font-size: 17px; }
+.hero-lateral { position: absolute; right: 28px; bottom: 100px; color: rgba(238,240,235,.5); font-size: 9px; letter-spacing: .26em; writing-mode: vertical-rl; }
+
+.ficha { padding: 130px 0 110px; background: var(--branco); color: var(--preto); }
+.ficha-grid, .legado-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
+.numero-secao { color: var(--vermelho); }
+.numero-secao span { color: #707875; }
+h2 { margin: 0; font: 700 clamp(2.8rem, 6vw, 5.7rem)/.9 var(--serif); letter-spacing: -.07em; }
+h2 em { color: var(--vermelho); font-style: normal; }
+.texto-grande { max-width: 400px; margin: 32px 0 0; font: 700 22px/1.38 var(--serif); }
+.ficha-texto { padding-top: 43px; color: #555d5b; }
+.ficha-texto p { max-width: 500px; margin: 0 0 20px; font-size: 15px; }
+.ficha-texto strong { color: var(--preto); }
+.dados-filme { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; margin-top: 42px; padding-top: 20px; border-top: 1px solid #c9ceca; }
+.dados-filme span, .dados-filme strong { display: block; }
+.dados-filme span { margin-bottom: 4px; color: #7a827f; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.dados-filme strong { font-size: 13px; }
+
+.galeria { padding: 100px 0; background: #171c1f; }
+.galeria-grid { display: grid; grid-template-columns: 1.4fr .7fr .75fr; gap: 25px; align-items: center; }
+.imagem-quadro { margin: 0; }
+.imagem-quadro img { width: 100%; height: 320px; object-fit: cover; filter: grayscale(.3) contrast(1.08); }
+.imagem-vertical img { height: 390px; }
+.imagem-quadro figcaption { margin-top: 12px; color: #7f8985; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.galeria-nota { padding: 20px; border-top: 1px solid var(--amarelo); border-bottom: 1px solid var(--amarelo); }
+.sinal { color: var(--amarelo); font-weight: 700; letter-spacing: .25em; }
+.galeria-nota p { margin: 25px 0 18px; font: italic 22px/1.25 var(--serif); }
+.galeria-nota small { color: var(--cinza-claro); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+
+.personagens { padding: 130px 0; background: var(--preto); }
+.cabecalho-secao { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 58px; }
+.cabecalho-copy { max-width: 280px; margin: 0 0 5px; color: var(--cinza-claro); font-size: 14px; }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.card-personagem { overflow: hidden; border: 1px solid var(--linha); background: var(--escuro); transition: transform .25s ease, border-color .25s ease; }
+.card-personagem:hover { border-color: var(--amarelo); transform: translateY(-8px); }
+.card-topo { position: relative; display: flex; align-items: flex-end; justify-content: space-between; height: 190px; padding: 20px; overflow: hidden; }
+.card-topo::after { position: absolute; inset: 0; content: ''; opacity: .4; background: repeating-linear-gradient(135deg, transparent 0 10px, rgba(255,255,255,.18) 11px 12px); }
+.card-batman { background: linear-gradient(140deg, #26363b, #111619); }
+.card-coringa { background: linear-gradient(140deg, #4a4b35, #1e2521); }
+.card-dent { background: linear-gradient(140deg, #635b50, #242725); }
+.card-gordon { background: linear-gradient(140deg, #3d4b51, #172027); }
+.inicial { position: relative; z-index: 1; color: var(--branco); font: 700 75px/.7 var(--serif); letter-spacing: -.12em; }
+.simbolo { position: relative; z-index: 1; color: var(--amarelo); font-size: 30px; }
+.card-corpo { padding: 25px 21px 28px; }
+.ator { margin: 0 0 7px; color: var(--amarelo); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.card-corpo h3 { margin: 0 0 12px; font: 700 27px var(--serif); }
+.card-corpo p:last-child { min-height: 70px; margin: 0; color: #8b9691; font-size: 13px; }
+
+.legado { padding: 110px 0; background: var(--vermelho); }
+.legado .numero-secao { color: #f0c1ae; }
+.legado .numero-secao span { color: #f1d0c5; }
+.legado h2 { color: var(--branco); }
+.legado h2 em { color: #1b0e0e; }
+.legado-copy { padding-top: 42px; }
+.legado-copy p { max-width: 490px; margin: 0; color: #f6d9cf; font-size: 17px; }
+.legado-copy strong { color: var(--branco); }
+.linha-destaque { display: flex; align-items: center; gap: 18px; margin-top: 45px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.35); color: #f3c5b6; font-size: 10px; font-weight: 700; letter-spacing: .16em; }
+.linha-destaque strong { color: var(--branco); font: 700 29px var(--serif); letter-spacing: -.05em; }
+
+.rodape { padding: 26px 0; background: #070809; }
+.rodape-conteudo { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #77817d; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.rodape-logo { color: var(--branco); font-weight: 700; }
+.rodape-logo span { color: var(--amarelo); }
+.rodape a { color: var(--amarelo); text-decoration: none; }
+
+@media (max-width: 850px) {
+  .hero { min-height: 680px; }
+  .hero h1 { font-size: clamp(3.8rem, 15vw, 7rem); }
+  .ficha-grid, .legado-grid { grid-template-columns: 1fr; gap: 25px; }
+  .ficha-texto, .legado-copy { padding-top: 0; }
+  .galeria-grid { grid-template-columns: 1fr 1fr; }
+  .imagem-grande { grid-column: span 2; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
 }
 
-main, header, footer { max-width: 980px; margin: 0 auto; padding: 0 1.25rem; }
-
-/* ---------- Cabeçalho: o Sinal do Morcego ---------- */
-header#topo {
-  position: relative;
-  text-align: center;
-  padding: 3rem 1.25rem 7.5rem;
-  max-width: none;
-  background:
-    linear-gradient(to top, rgba(245,197,24,.28), transparent 45%),
-    linear-gradient(to bottom, #0a0c10, var(--preto));
-  border-bottom: 3px solid var(--amarelo);
-}
-
-/* O Sinal do Morcego no céu de Gotham */
-header#topo::before {
-  content: "";
-  display: block;
-  width: min(260px, 62vw);
-  aspect-ratio: 2 / 1.1;
-  margin: 0 auto 1.5rem;
-  border-radius: 50%;
-  background:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><path fill='%23080808' d='M50 8C46 8 45 14 42 14C38 10 30 6 20 8C10 10 4 18 0 26C8 22 16 24 22 30C26 26 32 26 36 30C40 28 44 32 46 40C47 44 49 46 50 48C51 46 53 44 54 40C56 32 60 28 64 30C68 26 74 26 78 30C84 24 92 22 100 26C96 18 90 10 80 8C70 6 62 10 58 14C55 14 54 8 50 8Z'/></svg>") center / 62% no-repeat,
-    radial-gradient(ellipse, #fff3a0 0%, #f5c518 55%, #c79a0a 100%);
-  box-shadow: 0 0 70px 20px rgba(245,197,24,.55);
-  animation: sinal 6s ease-in-out infinite;
-}
-
-/* Skyline de Gotham */
-header#topo::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 90px;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 80' preserveAspectRatio='none'><path fill='%23090b0f' d='M0 80V50h20V35h14V20h6V8h4V20h6V35h14V55h18V40h22V28h16V45h20V60h24V30h10V14l8-12 8 12V30h10V52h22V38h18V58h20V42h14V24h6V10h4V24h6V44h20V56h24V36h18V50h22V64h20V46h16V30h12V16h4V6h4V16h4V30h14V52h18V70h22V80Z'/></svg>") bottom / 600px 90px repeat-x;
-}
-
-@keyframes sinal {
-  0%, 48%, 52%, 100% { opacity: 1; }
-  50% { opacity: .75; }
-  80% { opacity: .92; }
-}
-
-h1 {
-  margin: 0;
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: clamp(3rem, 11vw, 7.5rem);
-  letter-spacing: .08em;
-  line-height: 1;
-  color: var(--preto);
-  text-shadow: 0 0 2px #000, 0 4px 18px rgba(0,0,0,.7);
-  -webkit-text-stroke: 1px var(--amarelo);
-}
-
-h2 {
-  margin: .5rem 0 0;
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: clamp(1.6rem, 5vw, 3.2rem);
-  letter-spacing: .3em;
-  font-weight: 400;
-  color: var(--amarelo);
-}
-
-h3 {
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: clamp(2rem, 6vw, 3.4rem);
-  letter-spacing: .1em;
-  font-weight: 400;
-  margin: 4rem 0 1rem;
-  padding-bottom: .4rem;
-  border-bottom: 2px solid var(--amarelo);
-  color: #fff;
-}
-
-h4 { margin: 0 0 .3rem; font-weight: 500; font-size: 1.5rem; line-height: 1.2; }
-
-p { margin: 0 0 1rem; }
-
-.aviso {
-  font-family: "Special Elite", monospace;
-  font-size: .9rem;
-  color: #9aa0a8;
-  border-left: 3px solid var(--amarelo);
-  padding-left: 1rem;
-}
-
-#introducao p:first-of-type::first-letter {
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: 4.4rem;
-  float: left;
-  line-height: .8;
-  padding: .3rem .6rem 0 0;
-  color: var(--amarelo);
-}
-
-/* ---------- Linha do tempo horizontal (cabe na tela, sem rolagem) ---------- */
-#linha-do-tempo ol {
-  list-style: none;
-  display: flex;
-  margin: 2rem 0 0;
-  padding: 0;
-}
-
-.obra {
-  position: relative;
-  flex: 1 1 0;
-  min-width: 0;
-  height: 340px;
-  cursor: pointer;
-  outline: none;
-  background: linear-gradient(to bottom, transparent 18px, var(--amarelo) 18px, var(--amarelo) 22px, transparent 22px);
-  --cor: var(--amarelo);
-}
-
-.obra::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  width: 16px;
-  height: 16px;
-  margin-left: -8px;
-  background: var(--preto);
-  border: 3px solid var(--cor);
-  border-radius: 50%;
-  transition: transform .2s, background .2s, box-shadow .2s;
-}
-
-.obra::after {
-  content: attr(data-ano);
-  position: absolute;
-  top: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  writing-mode: vertical-rl;
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: .95rem;
-  letter-spacing: .08em;
-  color: #9aa0a8;
-}
-
-.obra:hover::before,
-.obra:focus::before,
-.obra:focus-within::before {
-  transform: scale(1.5);
-  background: var(--cor);
-  box-shadow: 0 0 14px var(--cor);
-}
-
-.obra:hover::after, .obra:focus::after { color: var(--cor); }
-.obra:focus-visible::before { outline: 3px solid #fff; outline-offset: 3px; }
-
-.cartao {
-  position: absolute;
-  top: 90px;
-  left: 50%;
-  width: 300px;
-  margin-left: -150px;
-  padding: 1.1rem 1.3rem;
-  background: var(--grafite);
-  border: 1px solid var(--cinza);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity .2s;
-  z-index: 5;
-}
-
-/* cartões das pontas ficam alinhados à borda da linha */
-.obra:nth-child(1) .cartao { left: 0; margin-left: calc(-0 * 100%); }
-.obra:nth-child(2) .cartao { left: 0; margin-left: calc(-1 * 100%); }
-.obra:nth-child(3) .cartao { left: 0; margin-left: calc(-2 * 100%); }
-.obra:nth-child(4) .cartao { left: 0; margin-left: calc(-3 * 100%); }
-.obra:nth-child(5) .cartao { left: 0; margin-left: calc(-4 * 100%); }
-.obra:nth-child(19) .cartao { left: auto; right: 0; margin-left: 0; margin-right: calc(-4 * 100%); }
-.obra:nth-child(20) .cartao { left: auto; right: 0; margin-left: 0; margin-right: calc(-3 * 100%); }
-.obra:nth-child(21) .cartao { left: auto; right: 0; margin-left: 0; margin-right: calc(-2 * 100%); }
-.obra:nth-child(22) .cartao { left: auto; right: 0; margin-left: 0; margin-right: calc(-1 * 100%); }
-.obra:nth-child(23) .cartao { left: auto; right: 0; margin-left: 0; margin-right: calc(-0 * 100%); }
-
-.obra:hover, .obra:focus, .obra:focus-within { z-index: 10; }
-.obra:hover .cartao, .obra:focus .cartao, .obra:focus-within .cartao {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.cartao h4 { font-size: 1.35rem; }
-.cartao p { font-size: .95rem; line-height: 1.5; }
-.meta { font-size: .8rem; opacity: .75; letter-spacing: .05em; }
-
-/* cor da bolinha de cada obra */
-.obra.quadrinho { --cor: #b3211b; }
-.obra.serie-classica { --cor: #ffe600; }
-.obra.burton { --cor: #b98cff; }
-.obra.animacao-dcau { --cor: #ff3b4a; }
-.obra.schumacher { --cor: #00ff9d; }
-.obra.nolan { --cor: #8fa3b3; }
-.obra.red-hood { --cor: #ff2a2a; }
-.obra.ano-um { --cor: #e6b660; }
-.obra.dkr-animado { --cor: #f5c518; }
-.obra.gotham-tv { --cor: #d4a94a; }
-.obra.piada-mortal { --cor: #ff00a8; }
-.obra.the-batman { --cor: #e2312a; }
-.obra.caped { --cor: #f2efe3; }
-
-/* Quadrinhos clássicos: papel velho e tinta */
-.obra.quadrinho .cartao {
-  background: #e9dfc4;
-  color: #2b2418;
-  border: 3px solid #1a1a1a;
-  box-shadow: 6px 6px 0 #1a1a1a;
-}
-.quadrinho h4 { font-family: "Bangers", cursive; letter-spacing: .06em; font-size: 1.8rem; color: #b3211b; }
-
-/* 1966: pop colorido, "POW!" */
-.obra.serie-classica .cartao {
-  background: repeating-linear-gradient(45deg, #1c6fe0 0 14px, #2a82f2 14px 28px);
-  color: #fff7a8;
-  border: 5px solid #ffe600;
-  border-radius: 14px;
-  transform: rotate(-.6deg);
-}
-.serie-classica h4 { font-family: "Bangers", cursive; font-size: 2.2rem; color: #ffe600; text-shadow: 3px 3px 0 #d6001c; letter-spacing: .08em; }
-
-/* Burton: gótico, art déco sombrio */
-.obra.burton .cartao {
-  background: linear-gradient(160deg, #1a1124, #0b0a10);
-  border: 2px solid #6b4a8a;
-  color: #cbb9de;
-  box-shadow: inset 0 0 40px rgba(107,74,138,.35);
-}
-.burton h4 { font-family: "Creepster", "IM Fell English SC", serif; font-size: 2rem; color: #d9b8ff; letter-spacing: .08em; font-weight: 400; }
-
-/* Animação DCAU: noir pintado em preto */
-.obra.animacao-dcau .cartao {
-  background: linear-gradient(to bottom, #3a0d0d 0%, #0a0303 70%);
-  border: 2px solid #b11226;
-  color: #f1d6d6;
-}
-.animacao-dcau h4 { font-family: "Anton", Impact, sans-serif; font-weight: 400; letter-spacing: .06em; color: #ff3b4a; text-transform: uppercase; }
-
-/* Schumacher: neon e circo */
-.obra.schumacher .cartao {
-  background: linear-gradient(135deg, #12002b, #00253a);
-  border: 3px solid #00ff9d;
-  box-shadow: 0 0 18px #00ff9d, 0 0 36px #ff00c8 inset;
-  color: #f0ffff;
-}
-.schumacher h4 { font-family: "Bungee", Impact, sans-serif; font-weight: 400; font-size: 1.4rem; color: #ff2fd0; text-shadow: 0 0 10px #ff2fd0, 0 0 20px #00ff9d; }
-
-/* Nolan: aço frio e realismo */
-.obra.nolan .cartao {
-  background: linear-gradient(180deg, #1b2229, #0c1014);
-  border: 1px solid #55626e;
-  border-top: 4px solid #8fa3b3;
-  color: #c5d0d8;
-}
-.nolan h4 { font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 1.8rem; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
-
-/* Capuz Vermelho: sangue e raiva */
-.obra.red-hood .cartao {
-  background: linear-gradient(135deg, #2b0000, #0a0000);
-  border: 2px solid #d40000;
-  color: #ffd2d2;
-  box-shadow: 0 0 24px rgba(212,0,0,.4);
-}
-.red-hood h4 { font-family: "Anton", Impact, sans-serif; font-weight: 400; color: #ff2a2a; letter-spacing: .08em; }
-
-/* Ano Um: sépia, chuva, realismo policial */
-.obra.ano-um .cartao {
-  background: linear-gradient(180deg, #2a2118, #120e0a);
-  border: 1px solid #6b5636;
-  color: #d9c7a3;
-}
-.ano-um h4 { font-family: "Special Elite", monospace; color: #e6b660; }
-
-/* Dark Knight Returns animado: distopia cinza e amarelo */
-.obra.dkr-animado .cartao {
-  background: #1a1a1a;
-  border: 3px solid #ccc;
-  border-left: 14px solid var(--amarelo);
-  color: #e0e0e0;
-}
-.dkr-animado h4 { font-family: "Barlow Condensed", sans-serif; font-weight: 600; text-transform: uppercase; font-size: 1.7rem; letter-spacing: .08em; color: var(--amarelo); }
-
-/* Gotham (série): barroco, decadente */
-.obra.gotham-tv .cartao {
-  background: linear-gradient(135deg, #1d1608, #0a0a0a);
-  border: 2px double #b8903a;
-  color: #e6d5a8;
-}
-.gotham-tv h4 { font-family: "Cinzel", serif; color: #d4a94a; letter-spacing: .06em; }
-
-/* Piada Mortal: cores doentias, caos */
-.obra.piada-mortal .cartao {
-  background: linear-gradient(120deg, #4a007a 0%, #0a8f3a 100%);
-  border: 4px dashed #ffd100;
-  color: #fff;
-  transform: rotate(.7deg);
-}
-.piada-mortal h4 { font-family: "Permanent Marker", cursive; font-size: 1.9rem; color: #ffd100; text-shadow: 3px 3px 0 #ff00a8; }
-
-/* The Batman: chuva, ferrugem e sangue */
-.obra.the-batman .cartao {
-  background: linear-gradient(180deg, #1a0a0a, #050505);
-  border: 1px solid #5a1313;
-  border-bottom: 5px solid #c4251c;
-  color: #cfc0bd;
-}
-.the-batman h4 { font-family: "Barlow Condensed", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: #e2312a; font-size: 1.7rem; }
-
-/* Cruzado Encapuzado: noir clássico, cinema antigo */
-.obra.caped .cartao {
-  background: #101418;
-  border: 1px solid #aaa;
-  outline: 3px double #666;
-  outline-offset: 5px;
-  color: #d8d8d0;
-}
-.caped h4 { font-family: "Special Elite", monospace; color: #f2efe3; font-size: 1.6rem; }
-
-/* ---------- Enciclopédia ---------- */
-#enciclopedia { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-#enciclopedia > h3, #enciclopedia > .aviso { grid-column: 1 / -1; }
-
-.personagem {
-  padding: 1.5rem;
-  border: 2px solid var(--cinza);
-  background: var(--grafite);
-  position: relative;
-  overflow: hidden;
-}
-.papel { font-size: .8rem; letter-spacing: .2em; opacity: .8; margin-bottom: .6rem; }
-
-.personagem.batman { background: linear-gradient(160deg, #111, #000); border: 2px solid var(--amarelo); box-shadow: 0 0 24px rgba(245,197,24,.25); }
-.batman h4 { font-family: "Bebas Neue", sans-serif; font-size: 2.2rem; letter-spacing: .12em; color: var(--amarelo); font-weight: 400; }
-
-.personagem.alfred { background: #1d1a17; border: 1px solid #8a7a5c; color: #e3d9c3; }
-.alfred h4 { font-family: "Cinzel", serif; color: #d9c79b; }
-
-.personagem.gordon { background: #17212b; border: 1px solid #4a6580; color: #c9d6e2; }
-.gordon h4 { font-family: "Special Elite", monospace; color: #8fb8de; }
-
-.personagem.robin { background: linear-gradient(135deg, #d62828, #1b5e20); border: 3px solid #ffd60a; color: #fff; }
-.robin h4 { font-family: "Bangers", cursive; font-size: 2rem; letter-spacing: .08em; color: #ffd60a; font-weight: 400; }
-
-.personagem.jason { background: #1a0505; border: 2px solid #c40000; color: #f5c8c8; }
-.jason h4 { font-family: "Anton", Impact, sans-serif; font-weight: 400; color: #ff2b2b; text-transform: uppercase; }
-
-.personagem.batgirl { background: linear-gradient(160deg, #2a0f3d, #0b0614); border: 2px solid #f5c518; color: #e8d6f7; }
-.batgirl h4 { font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 2rem; letter-spacing: .1em; color: #c98bff; }
-
-.personagem.lucius { background: #0f1a22; border: 1px solid #3aa0c9; color: #cfe7f1; }
-.lucius h4 { font-family: "Barlow Condensed", sans-serif; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #5fd0ff; }
-
-/* Vilões */
-.personagem.coringa { background: linear-gradient(135deg, #3b0a63, #0d6b2c); border: 4px dashed #ff2bd1; color: #fff; transform: rotate(-1deg); }
-.coringa h4 { font-family: "Permanent Marker", cursive; font-size: 2.4rem; color: #b6ff00; text-shadow: 3px 3px 0 #7a00c9; }
-
-.personagem.harley { background: linear-gradient(90deg, #ff2d55 50%, #1a1aff 50%); border: 3px solid #000; color: #fff; }
-.harley h4 { font-family: "Bangers", cursive; font-size: 2.2rem; color: #fff; text-shadow: 3px 3px 0 #000; letter-spacing: .08em; font-weight: 400; }
-.harley p { background: rgba(0,0,0,.55); padding: .5rem .75rem; }
-
-.personagem.pinguim { background: #0d0d0f; border: 2px solid #c9a227; color: #ddd; }
-.pinguim h4 { font-family: "Cinzel", serif; color: #c9a227; letter-spacing: .1em; }
-
-.personagem.charada { background: #0a2a14; border: 3px solid #00e048; color: #bfffd2; }
-.charada h4 { font-family: "Special Elite", monospace; font-size: 2rem; color: #00ff55; text-shadow: 0 0 8px #00ff55; }
-.charada h4::after { content: " ?"; }
-
-.personagem.duas-caras { background: linear-gradient(90deg, #f1f1f1 50%, #4a0f0f 50%); border: 3px solid #000; color: #111; }
-.duas-caras h4 { font-family: "Cinzel", serif; color: #7a0c0c; }
-.duas-caras p { background: rgba(255,255,255,.75); padding: .4rem .6rem; }
-
-.personagem.espantalho { background: radial-gradient(circle at 30% 20%, #4a4a1a, #0e0f05); border: 2px solid #8a8f2e; color: #d8dca6; }
-.espantalho h4 { font-family: "Creepster", cursive; font-weight: 400; font-size: 2.1rem; letter-spacing: .1em; color: #c8cf3f; }
-
-.personagem.bane { background: #1d1d1d; border: 6px solid #666; color: #ccc; }
-.bane h4 { font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 2.4rem; text-transform: uppercase; color: #fff; letter-spacing: .08em; }
-
-.personagem.ras { background: linear-gradient(160deg, #0a3d2a, #020d09); border: 2px solid #3ccf91; color: #c6f3df; }
-.ras h4 { font-family: "Cinzel", serif; font-size: 1.6rem; color: #5df2b0; letter-spacing: .12em; }
-
-.personagem.mulher-gato { background: linear-gradient(160deg, #1a1a1f, #000); border: 2px solid #b8b8c8; border-radius: 0 28px 0 28px; color: #dcdce6; }
-.mulher-gato h4 { font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 2rem; letter-spacing: .14em; color: #e5e5f2; }
-
-.personagem.hera { background: linear-gradient(160deg, #0d4a1f, #052a10); border: 2px solid #ff4fa3; border-radius: 40px 0 40px 0; color: #d6ffe2; }
-.hera h4 { font-family: "Cinzel", serif; color: #ff7cc0; }
-
-.personagem.sr-frio { background: linear-gradient(180deg, #d9f4ff, #6ab9e8); border: 3px solid #fff; color: #06324d; }
-.sr-frio h4 { font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 1.9rem; letter-spacing: .1em; color: #0a5a8a; }
-
-.personagem.croc { background: linear-gradient(180deg, #1f2a12, #0a0f05); border: 3px solid #5c7a1f; color: #cfdca8; }
-.croc h4 { font-family: "Anton", Impact, sans-serif; font-weight: 400; color: #8fbf2a; letter-spacing: .06em; }
-
-.personagem.talia { background: linear-gradient(135deg, #3a0f1a, #0b0305); border: 2px solid #d4a94a; color: #f0dcc0; }
-.talia h4 { font-family: "Cinzel", serif; color: #e9c36a; }
-
-.personagem.coruja { background: #1a1a1a; border: 2px solid #8a8a8a; outline: 2px solid #3d3d3d; outline-offset: 5px; color: #cfcfcf; }
-.coruja h4 { font-family: "IM Fell English SC", serif; font-size: 1.8rem; color: #e0e0e0; letter-spacing: .1em; }
-
-footer { text-align: center; font-size: .85rem; opacity: .6; padding: 3rem 1.25rem; }
-
-a:focus-visible, :focus-visible { outline: 3px solid var(--amarelo); outline-offset: 3px; }
-
-@media (max-width: 700px) {
-  /* no celular a linha quebra em linhas e o cartão abre na base da tela */
-  #linha-do-tempo ol { flex-wrap: wrap; }
-  .obra { flex: 0 0 calc(100% / 8); height: 78px; }
-  .obra::before { width: 12px; height: 12px; margin-left: -6px; top: 14px; }
-  .obra::after { font-size: .8rem; top: 32px; }
-  .obra .cartao, .obra:nth-child(n) .cartao {
-    position: fixed;
-    top: auto; bottom: .75rem; left: .75rem; right: .75rem;
-    width: auto; margin: 0;
-    transform: none !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-/* ---------- Clima de Gotham ---------- */
-
-/* chuva fina e constante sobre a página inteira */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: .5;
-  background-image:
-    repeating-linear-gradient(105deg, transparent 0 22px, rgba(170,190,215,.10) 22px 23px, transparent 23px 47px),
-    repeating-linear-gradient(105deg, transparent 0 61px, rgba(170,190,215,.07) 61px 62px, transparent 62px 113px);
-  background-size: 100% 220px, 100% 340px;
-  animation: chuva .9s linear infinite;
-}
-
-@keyframes chuva {
-  to { background-position: -40px 220px, -60px 340px; }
-}
-
-/* morcego em cada título de seção e no rodapé */
-h3::before, footer::before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  height: .75em;
-  margin-right: .45em;
-  background: var(--amarelo);
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><path d='M50 8C46 8 45 14 42 14C38 10 30 6 20 8C10 10 4 18 0 26C8 22 16 24 22 30C26 26 32 26 36 30C40 28 44 32 46 40C47 44 49 46 50 48C51 46 53 44 54 40C56 32 60 28 64 30C68 26 74 26 78 30C84 24 92 22 100 26C96 18 90 10 80 8C70 6 62 10 58 14C55 14 54 8 50 8Z'/></svg>") center / contain no-repeat;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><path d='M50 8C46 8 45 14 42 14C38 10 30 6 20 8C10 10 4 18 0 26C8 22 16 24 22 30C26 26 32 26 36 30C40 28 44 32 46 40C47 44 49 46 50 48C51 46 53 44 54 40C56 32 60 28 64 30C68 26 74 26 78 30C84 24 92 22 100 26C96 18 90 10 80 8C70 6 62 10 58 14C55 14 54 8 50 8Z'/></svg>") center / contain no-repeat;
-}
-
-footer::before { display: block; width: 3rem; height: 1.5rem; margin: 0 auto 1rem; }
-footer { border-top: 1px solid var(--cinza); margin-top: 4rem; }
-
-/* faixa amarela no topo da página */
-html { border-top: 8px solid var(--amarelo); }
-
-@media (prefers-reduced-motion: reduce) {
-  body::before, header#topo::before { animation: none; }
+@media (max-width: 600px) {
+  .container { width: min(100% - 32px, 1160px); }
+  .barra { min-height: 65px; }
+  .menu { display: none; }
+  .hero { min-height: 620px; }
+  .hero-conteudo { padding-top: 80px; }
+  .hero-lateral { display: none; }
+  .hero-descricao { font-size: 16px; }
+  .ficha, .personagens { padding: 80px 0; }
+  .galeria { padding: 70px 0; }
+  .galeria-grid { grid-template-columns: 1fr; }
+  .imagem-grande { grid-column: auto; }
+  .imagem-quadro img, .imagem-vertical img { height: 300px; }
+  .galeria-nota { order: 3; }
+  .cabecalho-secao { display: block; margin-bottom: 38px; }
+  .cabecalho-copy { margin-top: 25px; }
+  .cards { grid-template-columns: 1fr; }
+  .card-topo { height: 145px; }
+  .rodape-conteudo { align-items: flex-start; flex-direction: column; }
 }
