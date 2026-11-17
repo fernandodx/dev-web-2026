@@ -1,0 +1,164 @@
+/* Estilos da página - Atividade 01: Meu Filme Favorito */
+
+/* Variáveis CSS: cores, fontes e espaçamentos */
+:root {
+  --cor-fundo: #f4f1fa;
+  --cor-cartao: #ffffff;
+  --cor-destaque: #5b3fa0;
+  --cor-texto: #222222;
+  --cor-texto-suave: #666666;
+  --cor-borda: #dddddd;
+
+  --fonte-principal: Arial, Helvetica, sans-serif;
+
+  --espaco-pequeno: 8px;
+  --espaco-medio: 16px;
+  --espaco-grande: 32px;
+
+  --raio-borda: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: var(--espaco-grande) var(--espaco-medio);
+  font-family: var(--fonte-principal);
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+/* Cabeçalho da página com o menu de navegação */
+.topo {
+  max-width: 900px;
+  margin: 0 auto var(--espaco-medio);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--espaco-medio);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: var(--espaco-pequeno) var(--espaco-medio);
+  color: var(--cor-destaque);
+  font-weight: bold;
+  text-decoration: none;
+  background-color: var(--cor-cartao);
+  border-radius: var(--raio-borda);
+}
+
+nav a:hover {
+  color: var(--cor-cartao);
+  background-color: var(--cor-destaque);
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+article {
+  padding: var(--espaco-grande);
+  background-color: var(--cor-cartao);
+  border-radius: var(--raio-borda);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+article > header {
+  text-align: center;
+  margin-bottom: var(--espaco-grande);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--cor-destaque);
+}
+
+h2 {
+  margin: var(--espaco-pequeno) 0 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--cor-texto-suave);
+}
+
+h3 {
+  margin-top: 0;
+  color: var(--cor-destaque);
+}
+
+/* Layout em Flexbox: pôster ao lado do texto */
+.conteudo {
+  display: flex;
+  gap: var(--espaco-grande);
+  align-items: flex-start;
+}
+
+figure {
+  flex: 0 0 280px;
+  margin: 0;
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--espaco-pequeno);
+}
+
+figcaption {
+  margin-top: var(--espaco-pequeno);
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+.textos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-medio);
+}
+
+section p {
+  margin: 0;
+}
+
+footer {
+  margin-top: var(--espaco-grande);
+  padding-top: var(--espaco-medio);
+  border-top: 1px solid var(--cor-borda);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsividade: em telas pequenas, tudo em coluna */
+@media (max-width: 700px) {
+  .conteudo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  figure {
+    flex: none;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  article {
+    padding: var(--espaco-medio);
+  }
+}
