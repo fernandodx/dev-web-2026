@@ -1,0 +1,272 @@
+/* ===== Variáveis CSS (cores, fontes e espaçamentos) ===== */
+:root {
+  --cor-fundo: #121212;
+  --cor-superficie: #1e1e1e;
+  --cor-borda: #333333;
+  --cor-texto: #eaeaea;
+  --cor-texto-suave: #a8a8a8;
+  --cor-destaque: #ff3d3d;
+  --cor-destaque-escuro: #b32424;
+
+  --fonte-titulo: "Impact", "Arial Black", sans-serif;
+  --fonte-texto: "Segoe UI", Tahoma, Arial, sans-serif;
+
+  --espaco-p: 0.5rem;
+  --espaco-m: 1rem;
+  --espaco-g: 2rem;
+  --espaco-gg: 3rem;
+
+  --raio: 10px;
+  --largura-max: 1100px;
+}
+
+/* ===== Reset básico ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
+}
+
+/* ===== Cabeçalho (Flexbox) ===== */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaco-m);
+  padding: var(--espaco-m) var(--espaco-g);
+  background-color: var(--cor-superficie);
+  border-bottom: 3px solid var(--cor-destaque);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cor-destaque);
+}
+
+.menu {
+  display: flex;
+  gap: var(--espaco-m);
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  padding: var(--espaco-p) var(--espaco-m);
+  border-radius: var(--raio);
+  transition: background-color 0.2s;
+}
+
+.menu a:hover {
+  background-color: var(--cor-destaque-escuro);
+}
+
+/* ===== Conteúdo principal ===== */
+.principal {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-g) var(--espaco-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-gg);
+}
+
+/* ===== Destaque (Flexbox) ===== */
+.destaque {
+  display: flex;
+  gap: var(--espaco-g);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.capa {
+  flex: 0 0 300px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.capa img {
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+  background-color: var(--cor-superficie);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  object-fit: cover;
+}
+
+.capa figcaption {
+  margin-top: var(--espaco-p);
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.apresentacao {
+  flex: 1 1 320px;
+}
+
+.etiqueta {
+  display: inline-block;
+  background-color: var(--cor-destaque-escuro);
+  padding: 0.2rem var(--espaco-m);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: var(--espaco-m);
+}
+
+.titulo-filme {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--cor-destaque);
+}
+
+.titulo-original {
+  color: var(--cor-texto-suave);
+  font-style: italic;
+  margin-bottom: var(--espaco-m);
+}
+
+.resumo {
+  font-size: 1.15rem;
+  margin-bottom: var(--espaco-m);
+}
+
+.nota {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.nota span {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: var(--cor-texto-suave);
+}
+
+/* ===== Blocos de seção ===== */
+.bloco h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--espaco-m);
+  padding-left: var(--espaco-m);
+  border-left: 5px solid var(--cor-destaque);
+}
+
+.bloco article p + p {
+  margin-top: var(--espaco-m);
+}
+
+/* ===== Ficha técnica (Grid) ===== */
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--espaco-m);
+}
+
+.ficha-item {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-m);
+}
+
+.ficha-item dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cor-destaque);
+}
+
+.ficha-item dd {
+  margin-top: 0.2rem;
+}
+
+/* ===== Elenco e curiosidades (Grid) ===== */
+.elenco,
+.curiosidades {
+  display: grid;
+  gap: var(--espaco-m);
+}
+
+.elenco {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.curiosidades {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.cartao {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-top: 3px solid var(--cor-destaque);
+  border-radius: var(--raio);
+  padding: var(--espaco-m);
+  transition: transform 0.2s;
+}
+
+.cartao:hover {
+  transform: translateY(-4px);
+}
+
+.cartao h3 {
+  margin-bottom: var(--espaco-p);
+}
+
+.cartao p {
+  color: var(--cor-texto-suave);
+}
+
+/* ===== Aviso (aside) ===== */
+.aviso {
+  max-width: var(--largura-max);
+  margin: 0 auto var(--espaco-g);
+  padding: var(--espaco-m);
+  background-color: var(--cor-destaque-escuro);
+  border-radius: var(--raio);
+  text-align: center;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  padding: var(--espaco-g) var(--espaco-m);
+  background-color: var(--cor-superficie);
+  border-top: 3px solid var(--cor-destaque);
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+  .cabecalho {
+    justify-content: center;
+    padding: var(--espaco-m);
+  }
+
+  .destaque {
+    justify-content: center;
+    text-align: center;
+  }
+}
