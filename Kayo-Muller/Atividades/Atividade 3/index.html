@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last of Us — Página da Série</title>
+    <!-- Bootstrap 5.3 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+
+    <!-- Cabeçalho Semântico -->
+    <header class="bg-black border-bottom border-secondary sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container py-3" aria-label="Menu principal">
+            <a class="navbar-brand fw-bold text-warning fs-4" href="#">SÉRIE<span class="text-light">HUB</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacao" aria-controls="menuNavegacao" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavegacao">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item"><a class="nav-link" href="#destaques">Destaques</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sinopse">Sinopse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#elenco">Elenco</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#temporadas">Temporadas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+
+        <!-- 1. Componente Breadcrumb (Obrigatório) -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb bg-body-tertiary px-3 py-2 rounded-3 border border-secondary-subtle">
+                <li class="breadcrumb-item"><a href="#" class="text-warning text-decoration-none">Início</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-warning text-decoration-none">Séries de Drama</a></li>
+                <li class="breadcrumb-item active text-light" aria-current="page">The Last of Us</li>
+            </ol>
+        </nav>
+
+        <!-- 2. Componente Carousel (Obrigatório - mínimo 2 slides) -->
+        <section id="destaques" class="mb-5">
+            <div id="carrosselSerie" class="carousel slide shadow-lg rounded-4 overflow-hidden border border-secondary" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carrosselSerie" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carrosselSerie" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carrosselSerie" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://placehold.co/1200x450/18181b/eab308?text=THE+LAST+OF+US+%E2%80%94+HBO+ORIGINAL" class="d-block w-100" alt="Banner principal The Last of Us">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+                            <h2 class="h4 text-warning fw-bold">Uma Jornada Pela Sobrevivência</h2>
+                            <p class="mb-0">Baseada no aclamado jogo eletrônico, a série acompanha Joel e Ellie pelos Estados Unidos pós-apocalípticos.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/1200x450/1e293b/38bdf8?text=VENCEDORA+DE+8+PREMIOS+EMMY" class="d-block w-100" alt="Premiações The Last of Us">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+                            <h2 class="h4 text-info fw-bold">Sucesso de Crítica e Público</h2>
+                            <p class="mb-0">Avaliada com 96% de aprovação no Rotten Tomatoes e nota 8.7 no IMDb.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/1200x450/14532d/4ade80?text=2%C2%AA+TEMPORADA+CONFIRMADA" class="d-block w-100" alt="Segunda Temporada">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+                            <h2 class="h4 text-success fw-bold">Novos Episódios em Produção</h2>
+                            <p class="mb-0">A história continua adaptando os eventos de The Last of Us Part II.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrosselSerie" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrosselSerie" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção de Sinopse e Ficha Técnica -->
+        <section id="sinopse" class="row g-4 mb-5">
+            <article class="col-lg-8">
+                <div class="p-4 bg-body-tertiary rounded-4 border border-secondary-subtle h-100">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge text-bg-warning">Drama</span>
+                        <span class="badge text-bg-secondary">Ficção Pós-Apocalíptica</span>
+                        <span class="badge text-bg-secondary">Aventura</span>
+                        <span class="badge text-bg-success">★ 8.7 IMDb</span>
+                    </div>
+                    <h1 class="display-6 fw-bold mb-3">The Last of Us <span class="fs-4 text-secondary fw-normal">(2023)</span></h1>
+                    <p class="lead text-light-emphasis">
+                        Vinte anos após a destruição da civilização moderna causada por um fungo mutante, Joel, um sobrevivente endurecido, é contratado para contrabandeá-la para fora de uma zona de quarentena opressiva.
+                    </p>
+                    <p class="text-secondary mb-0">
+                        O que começa como um pequeno trabalho logo se transforma em uma jornada brutal e comovente, à medida que ambos precisam atravessar os Estados Unidos dependendo um do outro para sobreviver.
+                    </p>
+                </div>
+            </article>
+
+            <aside class="col-lg-4">
+                <div class="p-4 bg-body-tertiary rounded-4 border border-secondary-subtle h-100">
+                    <h2 class="h5 text-warning fw-bold mb-3">Ficha Técnica</h2>
+                    <ul class="list-group list-group-flush rounded-3">
+                        <li class="list-group-item bg-transparent text-light d-flex justify-content-between px-0">
+                            <span class="text-secondary">Criadores</span>
+                            <strong>Craig Mazin & Neil Druckmann</strong>
+                        </li>
+                        <li class="list-group-item bg-transparent text-light d-flex justify-content-between px-0">
+                            <span class="text-secondary">Emissora</span>
+                            <strong>HBO / Max</strong>
+                        </li>
+                        <li class="list-group-item bg-transparent text-light d-flex justify-content-between px-0">
+                            <span class="text-secondary">Episódios</span>
+                            <strong>9 (1ª Temporada)</strong>
+                        </li>
+                        <li class="list-group-item bg-transparent text-light d-flex justify-content-between px-0">
+                            <span class="text-secondary">Classificação</span>
+                            <strong>16 anos</strong>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+
+        <!-- 3. Componente Card em Grid Responsivo (Elenco Principal) -->
+        <section id="elenco" class="mb-5">
+            <h2 class="h3 fw-bold mb-4 border-start border-warning border-4 ps-3">Elenco Principal</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                
+                <div class="col">
+                    <article class="card h-100 bg-body-tertiary border-secondary-subtle shadow-sm">
+                        <img src="https://placehold.co/400x260/27272a/eab308?text=Pedro+Pascal" class="card-img-top" alt="Pedro Pascal como Joel">
+                        <div class="card-body">
+                            <span class="badge text-bg-warning mb-2">Protagonista</span>
+                            <h3 class="card-title h5 fw-bold">Pedro Pascal</h3>
+                            <p class="card-text text-secondary small">Interpreta <strong>Joel Miller</strong>, um sobrevivente marcado pelo passado que recebe a missão de escoltar Ellie.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 bg-body-tertiary border-secondary-subtle shadow-sm">
+                        <img src="https://placehold.co/400x260/27272a/eab308?text=Bella+Ramsey" class="card-img-top" alt="Bella Ramsey como Ellie">
+                        <div class="card-body">
+                            <span class="badge text-bg-warning mb-2">Protagonista</span>
+                            <h3 class="card-title h5 fw-bold">Bella Ramsey</h3>
+                            <p class="card-text text-secondary small">Interpreta <strong>Ellie Williams</strong>, uma jovem de 14 anos que pode ser a chave para a cura da humanidade.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 bg-body-tertiary border-secondary-subtle shadow-sm">
+                        <img src="https://placehold.co/400x260/27272a/94a3b8?text=Anna+Torv" class="card-img-top" alt="Anna Torv como Tess">
+                        <div class="card-body">
+                            <span class="badge text-bg-secondary mb-2">Elenco</span>
+                            <h3 class="card-title h5 fw-bold">Anna Torv</h3>
+                            <p class="card-text text-secondary small">Interpreta <strong>Tess Servopoulos</strong>, parceira de contrabando de Joel na zona de quarentena de Boston.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 bg-body-tertiary border-secondary-subtle shadow-sm">
+                        <img src="https://placehold.co/400x260/27272a/94a3b8?text=Gabriel+Luna" class="card-img-top" alt="Gabriel Luna como Tommy">
+                        <div class="card-body">
+                            <span class="badge text-bg-secondary mb-2">Elenco</span>
+                            <h3 class="card-title h5 fw-bold">Gabriel Luna</h3>
+                            <p class="card-text text-secondary small">Interpreta <strong>Tommy Miller</strong>, irmão mais novo de Joel e ex-soldado que busca construir uma nova comunidade.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Cards de Episódios em Destaque -->
+        <section id="temporadas" class="mb-4">
+            <h2 class="h3 fw-bold mb-4 border-start border-warning border-4 ps-3">Episódios em Destaque (1ª Temporada)</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <article class="card h-100 bg-body-tertiary border-secondary-subtle">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge text-bg-dark border border-secondary">Episódio 1</span>
+                                <small class="text-warning">81 min</small>
+                            </div>
+                            <h3 class="card-title h5 fw-bold">Quando Estiver Perdido na Escuridão</h3>
+                            <p class="card-text text-secondary small">Um surto fúngico devasta o mundo em 2003. Vinte anos depois, Joel e Tess cruzam o caminho de Ellie.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 bg-body-tertiary border-secondary-subtle">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge text-bg-dark border border-secondary">Episódio 3</span>
+                                <small class="text-warning">76 min</small>
+                            </div>
+                            <h3 class="card-title h5 fw-bold">Por Muito, Muito Tempo</h3>
+                            <p class="card-text text-secondary small">A história emocionante de Bill e Frank, dois sobreviventes que constroem uma vida isolada ao longo de décadas.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 bg-body-tertiary border-secondary-subtle">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge text-bg-dark border border-secondary">Episódio 9</span>
+                                <small class="text-warning">43 min</small>
+                            </div>
+                            <h3 class="card-title h5 fw-bold">Procure a Luz</h3>
+                            <p class="card-text text-secondary small">Joel e Ellie finalmente chegam ao hospital dos Vagalumes em Salt Lake City, onde uma difícil decisão precisa ser tomada.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé Semântico -->
+    <footer class="bg-black text-center py-4 mt-5 border-top border-secondary">
+        <div class="container">
+            <p class="mb-0 text-secondary small">3ª Avaliação Oficial — Página de Série desenvolvida com HTML Semântico e Bootstrap 5.3</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle via CDN (Necessário para Carousel e Navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
