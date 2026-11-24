@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 720">
+  <defs><linearGradient id="bg" x2=".12" y2="1"><stop stop-color="#142d32"/><stop offset="1" stop-color="#09151c"/></linearGradient></defs>
+  <rect width="480" height="720" fill="url(#bg)"/>
+  <rect x="88" y="144" width="262" height="345" rx="10" fill="#bc965e" opacity=".36" transform="rotate(-12 219 316)"/>
+  <rect x="110" y="132" width="252" height="350" rx="10" fill="#dac293" transform="rotate(8 236 307)"/>
+  <g stroke="#875a49" stroke-width="5" stroke-linecap="round" opacity=".57" transform="rotate(8 236 307)"><path d="M151 208h161m-161 36h129m-129 36h161m-161 36h105m-105 36h161m-161 36h89"/></g>
+  <path d="m281 370 78 104" stroke="#182633" stroke-width="34" stroke-linecap="round"/>
+  <path d="m281 370 78 104" stroke="#ac7939" stroke-width="23" stroke-linecap="round"/>
+  <circle cx="240" cy="314" r="74" fill="#a3d6cf" fill-opacity=".28" stroke="#f0c875" stroke-width="14"/>
+  <path d="M199 288q10-22 34-27" fill="none" stroke="#f9f4df" stroke-width="6" stroke-linecap="round" opacity=".75"/>
+  <text x="240" y="595" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="bold" letter-spacing="3" fill="#f3d697">O MENTALISTA</text>
+  <text x="240" y="633" text-anchor="middle" font-family="sans-serif" font-size="15" letter-spacing="4" fill="#ebdeca">CAPA ILUSTRATIVA</text>
+</svg>

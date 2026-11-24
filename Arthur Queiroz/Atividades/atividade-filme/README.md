@@ -16,18 +16,13 @@ Página web simples dedicada a um filme favorito, construída com a estrutura b�
 ## Estrutura
 
 ```
-seuNome/Atividades/atividade-filme/
+Arthur Queiroz/Atividades/atividade-filme/
 ├── index.html
 ├── estilo.css
-├── poster.jpg
-├── print.png
+├── poster.svg
 └── README.md
 ```
 
 ## Como visualizar
 
 Abra o arquivo `index.html` no navegador (duplo clique ou "Abrir com" > navegador).
-
-## Print da página
-
-![Página renderizada no navegador](print.png)

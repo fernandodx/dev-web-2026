@@ -7,7 +7,7 @@ Página web sobre a série **O Mentalista** (*The Mentalist*), feita com HTML se
 ```
 atividade-serie/
 ├── index.html   # página completa (HTML + Bootstrap via CDN)
-├── capa.jpg     # imagem da série (opcional, usada na seção Sinopse)
+├── capa.svg     # ilustração local usada na seção Sinopse
 └── README.md    # descrição do projeto
 ```
 

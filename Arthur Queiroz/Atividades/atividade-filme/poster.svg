@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 720">
+  <defs>
+    <linearGradient id="sky" x2="0.2" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#060918"/><stop offset="1" stop-color="#25465a"/></linearGradient>
+    <radialGradient id="planet" cx=".33" cy=".23"><stop stop-color="#f5ddb2"/><stop offset=".65" stop-color="#ac775a"/><stop offset="1" stop-color="#563545"/></radialGradient>
+    <pattern id="stars" width="113" height="103" patternUnits="userSpaceOnUse"><path d="M7 9h1m24 43h1m19-32h1m34 54h1m17-51h1m-68 66h1" stroke="#dce8ea" stroke-width="2" stroke-linecap="round" opacity=".65"/></pattern>
+  </defs>
+  <rect width="480" height="720" fill="url(#sky)"/><rect width="480" height="535" fill="url(#stars)"/>
+  <g transform="rotate(-23 240 325)">
+    <ellipse cx="240" cy="325" rx="200" ry="43" fill="none" stroke="#e3b382" stroke-width="8" opacity=".7"/>
+    <circle cx="240" cy="325" r="111" fill="url(#planet)"/>
+    <path d="M40 325a200 43 0 0 0 400 0" fill="none" stroke="#ebcba1" stroke-width="8"/>
+    <path d="M36 333a204 48 0 0 0 408 0" fill="none" stroke="#ebcba1" opacity=".5"/>
+  </g>
+  <path d="M0 610Q155 516 480 550v170H0Z" fill="#091323"/>
+  <text x="240" y="632" text-anchor="middle" font-family="sans-serif" font-size="37" letter-spacing="5" fill="#f6ebda">INTERESTELAR</text>
+  <text x="240" y="667" text-anchor="middle" font-family="sans-serif" font-size="14" letter-spacing="3" fill="#bbc8d2">PÔSTER ILUSTRATIVO</text>
+</svg>
