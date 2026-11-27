@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Garage Palio | Artur Oliveira</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="#inicio">
+                    GARAGE <span>PALIO</span>
+                </a>
+
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false"
+                    aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre o carro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#personalizacao">Personalização</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#galeria">Galeria</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero" id="inicio">
+        <div class="container">
+
+            <small class="destaque">PROJETO AUTOMOTIVO PESSOAL</small>
+
+            <h1>FIAT PALIO <span>FIRE</span></h1>
+
+            <h2>1.0 | 2008</h2>
+
+            <p>
+                Personalidade, estilo e evolução sobre quatro rodas.
+                Conheça meu projeto de personalização automotiva.
+            </p>
+
+            <a href="#personalizacao" class="btn btn-danger">
+                Conhecer o projeto
+            </a>
+
+        </div>
+    </section>
+
+    <!-- SOBRE O CARRO -->
+    <section class="secao" id="sobre">
+        <div class="container">
+
+            <h2 class="titulo">Sobre o meu Palio</h2>
+
+            <p>
+                O Garage Palio é um projeto pessoal criado para
+                apresentar meu Fiat Palio Fire 1.0 2008 e acompanhar
+                as ideias de personalização do veículo.
+            </p>
+
+            <p>
+                O objetivo é manter a originalidade do carro,
+                valorizando sua aparência com modificações
+                que combinem estilo, conforto e funcionalidade.
+            </p>
+
+            <div class="row g-3 mt-4">
+
+                <div class="col-6 col-md-3">
+                    <div class="ficha">
+                        <i class="bi bi-car-front"></i>
+                        <h3>Fiat</h3>
+                        <p>Marca</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="ficha">
+                        <i class="bi bi-calendar"></i>
+                        <h3>2008</h3>
+                        <p>Ano</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="ficha">
+                        <i class="bi bi-speedometer2"></i>
+                        <h3>1.0</h3>
+                        <p>Motor Fire</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="ficha">
+                        <i class="bi bi-palette"></i>
+                        <h3>Prata</h3>
+                        <p>Cor</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONALIZAÇÃO -->
+    <section class="secao fundo-alternativo" id="personalizacao">
+        <div class="container">
+
+            <h2 class="titulo">Projetos de Personalização</h2>
+
+            <p>Conheça as modificações planejadas para o veículo.</p>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="projeto">
+                        <i class="bi bi-circle"></i>
+                        <h3>Rodas esportivas</h3>
+                        <p>
+                            Escolha de rodas para melhorar a aparência
+                            e destacar o estilo do Palio.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="projeto">
+                        <i class="bi bi-shield-check"></i>
+                        <h3>Películas nanocerâmicas</h3>
+                        <p>
+                            Aplicação de películas para conforto térmico,
+                            proteção solar e privacidade, respeitando
+                            as normas de trânsito.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="projeto">
+                        <i class="bi bi-tools"></i>
+                        <h3>Retrovisores</h3>
+                        <p>
+                            Personalização dos retrovisores,
+                            valorizando o visual externo do carro.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CHECKLIST INTERATIVO -->
+            <div class="painel mt-5">
+
+                <h3>Acompanhe a evolução do projeto</h3>
+
+                <p>Marque as modificações que forem realizadas.</p>
+
+                <label class="tarefa">
+                    <input type="checkbox" id="rodas">
+                    Instalar rodas esportivas
+                </label>
+
+                <label class="tarefa">
+                    <input type="checkbox" id="peliculas">
+                    Aplicar películas nanocerâmicas
+                </label>
+
+                <label class="tarefa">
+                    <input type="checkbox" id="retrovisores">
+                    Personalizar retrovisores
+                </label>
+
+                <label class="tarefa">
+                    <input type="checkbox" id="adesivo">
+                    Aplicar adesivo personalizado
+                </label>
+
+                <p class="mt-4" id="progresso" aria-live="polite">
+                    0 de 4 modificações concluídas
+                </p>
+
+                <div class="progress">
+                    <div class="progress-bar bg-danger"
+                        id="barra-progresso" role="progressbar"
+                        aria-label="Progresso das modificações"
+                        aria-valuenow="0" aria-valuemin="0"
+                        aria-valuemax="100" style="width: 0%">
+                        0%
+                    </div>
+                </div>
+
+                <button class="btn btn-outline-danger mt-4"
+                    id="btn-resetar">
+                    Reiniciar progresso
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="secao" id="galeria">
+        <div class="container">
+
+            <h2 class="titulo">Galeria do Palio</h2>
+
+            <p>Registros do veículo e de sua evolução.</p>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="foto-galeria">
+                        <i class="bi bi-camera"></i>
+                        <p>Vista frontal</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="foto-galeria">
+                        <i class="bi bi-camera"></i>
+                        <p>Vista lateral</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="foto-galeria">
+                        <i class="bi bi-camera"></i>
+                        <p>Vista traseira</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container text-center">
+
+            <h3>GARAGE <span>PALIO</span></h3>
+
+            <p>Projeto pessoal de Artur Oliveira</p>
+
+            <p>HTML • CSS • Bootstrap • JavaScript</p>
+
+            <a href="../../Projeto%20Final/index.html"
+                class="btn btn-outline-light">
+                Voltar ao Portfólio
+            </a>
+
+            <p class="mt-4">
+                Projeto acadêmico — 2026
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
