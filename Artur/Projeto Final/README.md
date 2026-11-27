@@ -123,3 +123,28 @@ Bootstrap e funcionalidades com JavaScript.
 Artur Oliveira
 
 GitHub: https://github.com/arturoliveira557
+## Acesso ao portfólio online
+
+O portfólio foi publicado utilizando o GitHub Pages
+e pode ser acessado pelo seguinte endereço:
+
+[Acessar portfólio online](https://arturoliveira557.github.io/dev-web-2026/Artur/Projeto%20Final/)
+
+## Resultados dos testes online
+
+- [x] Acesso ao portfólio pela internet.
+- [x] Abertura do projeto Interestelar.
+- [x] Abertura do projeto Stranger Things.
+- [x] Abertura do projeto PortfolioHUB.
+- [x] Abertura da Lista de Tarefas.
+- [x] Abertura do projeto Garage Palio.
+- [x] Funcionamento do menu responsivo.
+- [x] Navegação entre as seções.
+- [x] Visualização em dispositivos móveis simulados.
+- [x] Funcionamento do formulário de contato.
+- [x] Envio de mensagem pelo WhatsApp.
+- [x] Envio de mensagem por e-mail pelo Outlook.
+
+Os testes confirmaram o funcionamento dos recursos
+verificados e a adaptação da interface às telas
+simuladas de dispositivos móveis.
